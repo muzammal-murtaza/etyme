@@ -66,12 +66,12 @@
                       </div>
                     <% end %>
                       <div class="col-6  mt-2">
-                          <p class="f-14 f-mon-med txt-black"><span class="fa fa-briefcase"></span> <b>Job type</b> : 
+                          <p class="f-14 f-mon-med txt-black"><span class="fa fa-briefcase"></span> <b>Job type</b> :
                             <% if @job&.job_type.present? && @job.job_type == "Full Time" %>
                               <span class="badge badge-primary">Full Time</span>
                             <% elsif @job&.job_type.present? && @job.job_type == "Contract" %>
                               <span class="badge badge-info">Contract</span>
-                            <% elsif @job&.job_type.present? && @job.job_type == "Contract To Hire" %> 
+                            <% elsif @job&.job_type.present? && @job.job_type == "Contract To Hire" %>
                               <span class="badge badge-success">Contract to Hire</span>
                             <% else %>
                               <span>Not Assigned</span>
@@ -111,11 +111,11 @@
                               <div class="row">
                                   <div class="col-3 col-lg-3 text-left ">
                                     <% if request.subdomain == "app" %>
-                                      <%= image_tag(image_path('etyme-logo-dark.png'), class: "mr-3 img-fluid") %>
+                                      <%= image_tag(image_path('download.png'), class: "mr-3 img-fluid") %>
                                     <% elsif @current_company.present? && @current_company.logo.present? %>
                                       <%= image_tag @current_company.logo , class: "mr-3 img-fluid" %>
                                     <% else %>
-                                      <%= image_tag(image_path('etyme-logo-dark.png'), class: "mr-3 img-fluid") %>
+                                      <%= image_tag(image_path('download.png'), class: "mr-3 img-fluid") %>
                                     <% end %>
                                   </div>
                                   <div class="col-9 col-lg-9 mb-2">
@@ -124,8 +124,8 @@
                                         <b>Company</b> : <%= @job.company&.name&.humanize %></p>
                                       <% if @job&.company&.addresses.present? %>
                                         <% @job&.company&.addresses.each do |address| %>
-                                          <p class="m-0 f-12 mt-2 f-mon-med txt-black"><%= image_tag(image_path('placeholder.svg'), class: "img-fluid w-15 mr-2", alt: "placeholder") %> 
-                                            <b>Company Location</b> : 
+                                          <p class="m-0 f-12 mt-2 f-mon-med txt-black"><%= image_tag(image_path('placeholder.svg'), class: "img-fluid w-15 mr-2", alt: "placeholder") %>
+                                            <b>Company Location</b> :
                                             <% address_str = "" %>
                                             <% if address.address_1.present? %>
                                               <% address_str += "#{address.address_1}" %>
@@ -146,7 +146,7 @@
                                               <% address_str += ", #{address.country}" %>
                                             <% end %>
 
-                                            <%= address_str %> 
+                                            <%= address_str %>
                                           </p>
                                         <% end %>
                                       <% end %>

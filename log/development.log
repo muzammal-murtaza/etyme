@@ -10479,3 +10479,227 @@ Processing by Static::JobsController#index as HTML
 Completed 200 OK in 1407ms (Views: 1387.5ms | ActiveRecord: 4.7ms)
 
 
+Processing by StaticController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 867ms (Views: 832.3ms | ActiveRecord: 8.3ms)
+
+
+Processing by StaticController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 808ms (Views: 766.6ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2782ms (ActiveRecord: 4.6ms)
+
+
+
+NameError - undefined local variable or method `root_static_feeds_path' for #<#<Class:0x00007f3d5fd10aa8>:0x00007f3d5fd21380>:
+  app/views/kulkakit/shared/_sidebar.html.erb:24:in `_app_views_kulkakit_shared__sidebar_html_erb___872363679058707569_47424979781440'
+  app/views/layouts/kulkakit.html.erb:34:in `_app_views_layouts_kulkakit_html_erb__2017692156322383142_69950788652480'
+  app/controllers/static/jobs_controller.rb:15:in `index'
+
+
+ArgumentError - Missing :controller key on routes definition, please check your routes.:
+  config/routes.rb:768:in `block in <top (required)>'
+  config/routes.rb:3:in `<top (required)>'
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 476ms (Views: 445.6ms | ActiveRecord: 4.6ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 845ms (Views: 812.1ms | ActiveRecord: 19.7ms)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 536ms (Views: 533.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 500 Internal Server Error in 715ms (ActiveRecord: 2.4ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "logoo.png" is not present in the asset pipeline.:
+  app/views/static/shared/_header.html.erb:7:in `_app_views_static_shared__header_html_erb___1766530488915050938_69950788022240'
+  app/views/layouts/static.html.haml:20:in `_app_views_layouts_static_html_haml__2425893323462411751_69950971865560'
+
+Processing by StaticController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 21439ms (Views: 21428.2ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 1549ms (Views: 1545.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 1473ms (Views: 1462.6ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 810ms (Views: 800.6ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 1383ms (Views: 1374.3ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 903ms (Views: 896.6ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (2.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 896ms (Views: 882.9ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 910ms (Views: 902.6ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 582ms (Views: 571.3ms | ActiveRecord: 1.9ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 422ms (Views: 414.9ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 1176ms (Views: 1129.8ms | ActiveRecord: 12.3ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 850ms (Views: 842.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 813ms (Views: 805.2ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (2.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 934ms (Views: 913.9ms | ActiveRecord: 3.8ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 778ms (Views: 771.1ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 500 Internal Server Error in 645ms (ActiveRecord: 2.6ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "download.png" is not present in the asset pipeline.:
+  app/views/static/shared/_header.html.erb:7:in `_app_views_static_shared__header_html_erb___1766530488915050938_69950778779160'
+  app/views/layouts/static.html.haml:20:in `_app_views_layouts_static_html_haml__2425893323462411751_69950786819400'
+
+Processing by StaticController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 16005ms (Views: 15998.1ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 1619ms (Views: 1603.9ms | ActiveRecord: 1.1ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 453ms (Views: 446.6ms | ActiveRecord: 1.1ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.9ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 528ms (Views: 514.3ms | ActiveRecord: 1.9ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 547ms (Views: 541.6ms | ActiveRecord: 0.8ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 746ms (Views: 740.3ms | ActiveRecord: 0.7ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 590ms (Views: 583.5ms | ActiveRecord: 0.8ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 491ms (Views: 485.0ms | ActiveRecord: 0.3ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 533ms (Views: 527.2ms | ActiveRecord: 0.5ms)
+
+
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 611ms (Views: 606.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
