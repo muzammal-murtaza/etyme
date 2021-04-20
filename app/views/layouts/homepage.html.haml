@@ -5,7 +5,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "#{user_signed_in? ? current_user.id : ''}", :name => "user-id"}
     %meta{:content => "#{user_signed_in? ? current_user.class.to_s == "Candidate" ? "Candidate" : "User" : ''}", :name => "user-type"}
-    %title Etyme
+    %title Blocktyme
     = stylesheet_link_tag    'home'
     = action_cable_meta_tag
     = javascript_include_tag 'home'

@@ -8699,3 +8699,83 @@ Started GET "/cable/" [WebSocket] for ::1 at 2021-04-20 07:12:22 -0700
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"DocsChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/docs_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
 Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"MessagesChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/messages_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Finished "/cable/" [WebSocket] for ::1 at 2021-04-20 08:35:43 -0700
+Started GET "/" for ::1 at 2021-04-20 10:08:06 -0700
+Started POST "/__better_errors/62b152dd1519f18f/variables" for ::1 at 2021-04-20 10:08:07 -0700
+Started GET "/" for ::1 at 2021-04-20 10:08:50 -0700
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_jobs at /home/dev/Documents/Docs/etyme-2017/app/controllers/static_controller.rb:202)
+  Rendering static/index.html.erb within layouts/static
+  Rendered static/index.html.erb within layouts/static (3577.3ms)
+  Rendered static/shared/_header.html.erb (5.4ms)
+  Rendered static/shared/_footer.html.erb (1.6ms)
+  Rendered shared/_scripts.html.haml (2.5ms)
+  Rendered shared/_flash_messages.html.haml (4.8ms)
+Started GET "/cable" for ::1 at 2021-04-20 10:08:59 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2021-04-20 10:09:00 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"DocsChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/docs_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"MessagesChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/messages_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Started GET "/" for ::1 at 2021-04-20 10:10:39 -0700
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_jobs at /home/dev/Documents/Docs/etyme-2017/app/controllers/static_controller.rb:202)
+  Rendering static/index.html.erb within layouts/static
+  Rendered static/index.html.erb within layouts/static (9.2ms)
+  Rendered static/shared/_header.html.erb (6.1ms)
+  Rendered static/shared/_footer.html.erb (1.6ms)
+  Rendered shared/_scripts.html.haml (2.3ms)
+  Rendered shared/_flash_messages.html.haml (3.3ms)
+Finished "/cable/" [WebSocket] for ::1 at 2021-04-20 10:10:40 -0700
+Started GET "/cable" for ::1 at 2021-04-20 10:10:41 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2021-04-20 10:10:41 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"DocsChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/docs_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"MessagesChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/messages_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Started GET "/" for ::1 at 2021-04-20 10:11:29 -0700
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_jobs at /home/dev/Documents/Docs/etyme-2017/app/controllers/static_controller.rb:202)
+  Rendering static/index.html.erb within layouts/static
+  Rendered static/index.html.erb within layouts/static (10.5ms)
+  Rendered static/shared/_header.html.erb (7.7ms)
+  Rendered static/shared/_footer.html.erb (1.7ms)
+  Rendered shared/_scripts.html.haml (1.9ms)
+  Rendered shared/_flash_messages.html.haml (2.8ms)
+Finished "/cable/" [WebSocket] for ::1 at 2021-04-20 10:11:29 -0700
+Started GET "/cable" for ::1 at 2021-04-20 10:11:30 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2021-04-20 10:11:30 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"DocsChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/docs_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"MessagesChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/messages_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Started GET "/" for ::1 at 2021-04-20 10:15:14 -0700
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_jobs at /home/dev/Documents/Docs/etyme-2017/app/controllers/static_controller.rb:202)
+  Rendering static/index.html.erb within layouts/static
+  Rendered static/index.html.erb within layouts/static (11.3ms)
+  Rendered static/shared/_header.html.erb (4.7ms)
+  Rendered static/shared/_footer.html.erb (1.3ms)
+  Rendered shared/_scripts.html.haml (2.7ms)
+  Rendered shared/_flash_messages.html.haml (3.9ms)
+Finished "/cable/" [WebSocket] for ::1 at 2021-04-20 10:15:15 -0700
+Started GET "/cable" for ::1 at 2021-04-20 10:15:16 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2021-04-20 10:15:16 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"DocsChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/docs_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"MessagesChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/messages_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Started GET "/" for ::1 at 2021-04-20 10:15:46 -0700
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from set_jobs at /home/dev/Documents/Docs/etyme-2017/app/controllers/static_controller.rb:202)
+  Rendering static/index.html.erb within layouts/static
+  Rendered static/index.html.erb within layouts/static (12.5ms)
+  Rendered static/shared/_header.html.erb (7.6ms)
+  Rendered static/shared/_footer.html.erb (3.4ms)
+  Rendered shared/_scripts.html.haml (1.8ms)
+  Rendered shared/_flash_messages.html.haml (2.2ms)
+Finished "/cable/" [WebSocket] for ::1 at 2021-04-20 10:15:46 -0700
+Started GET "/cable" for ::1 at 2021-04-20 10:15:47 -0700
+Started GET "/cable/" [WebSocket] for ::1 at 2021-04-20 10:15:47 -0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"DocsChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/docs_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"MessagesChannel\"}"}) [NoMethodError - undefined method `id' for nil:NilClass]: /home/dev/Documents/Docs/etyme-2017/app/channels/messages_channel.rb:5:in `subscribed' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/channel/base.rb:177:in `block in subscribe_to_channel' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/callbacks.rb:108:in `block in run_callbacks' | /home/dev/.rvm/gems/ruby-2.6.5/gems/activesupport-5.1.2/lib/active_support/execution_wrapper.rb:81:in `wrap' | /home/dev/.rvm/gems/ruby-2.6.5/gems/actioncable-5.1.2/lib/action_cable/engine.rb:66:in `block (3 levels) in <class:Engine>'
+Started GET "/static/jobs" for ::1 at 2021-04-20 10:15:57 -0700
+  Rendering static/jobs/index.html.erb within layouts/kulkakit
+  Rendered kulkakit/shared/_header.html.erb (10.9ms)
+  Rendered static/jobs/_load_jobs.html.erb (3.0ms)
+  Rendered static/jobs/index.html.erb within layouts/kulkakit (163.3ms)
+  Rendered kulkakit/shared/_sidebar.html.erb (49.3ms)
+  Rendered shared/_flash_messages.html.haml (6.9ms)
+Finished "/cable/" [WebSocket] for ::1 at 2021-04-20 10:15:59 -0700

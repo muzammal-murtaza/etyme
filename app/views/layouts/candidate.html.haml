@@ -2,7 +2,7 @@
 %html{:id => "#{yield :html_id}"}
   %head
     %meta{:charset => "utf-8"}/
-    %title Etyme
+    %title Blocktyme
     = csrf_meta_tags
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
@@ -66,7 +66,7 @@
   :javascript
 
     $(".switch").on("click", function(){
-      
+
 
       var switch_status = $("#myonoffswitch").attr("checked");
 
@@ -76,9 +76,9 @@
 
       if(switch_status == "checked"){
         switch_status = true;
-        
+
         console.log("--------------------------")
-        
+
         $("#myonoffswitch").removeAttr("checked");
       }else{
           console.log("+++++++++++++++++++++++++++")
@@ -87,4 +87,4 @@
         //$("#myonoffswitch").removeAttr("checked");
         switch_status = false;
       }
-    }); 
+    });

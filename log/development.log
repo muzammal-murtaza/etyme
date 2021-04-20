@@ -10434,3 +10434,48 @@ Completed 200 OK in 773ms (Views: 701.4ms | ActiveRecord: 13.6ms)
 
 
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+
+PG::ConnectionBad - fe_sendauth: no password supplied
+:
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 5139ms (Views: 5087.5ms | ActiveRecord: 9.6ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 672ms (Views: 664.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 720ms (Views: 713.1ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (1.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 653ms (Views: 643.7ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by StaticController#index as HTML
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+  [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."deleted_at" IS NULL AND "jobs"."is_public" = $1 AND (end_date>='2021-04-20' AND status = 'Published')[0m  [["is_public", "t"]]
+Completed 200 OK in 749ms (Views: 739.1ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by Static::JobsController#index as HTML
+  [1m[36mCompany Load (1.7ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."slug" = $1 LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+Completed 200 OK in 1407ms (Views: 1387.5ms | ActiveRecord: 4.7ms)
+
+
