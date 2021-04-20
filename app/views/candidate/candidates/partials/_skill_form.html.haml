@@ -1,0 +1,37 @@
+- current_candidate.designations.build unless current_candidate.designations.present?
+= form_for current_candidate,url: candidate_candidate_path(current_candidate.id, tab: "skill"),method: :put, remote: true do |f|
+  %br/
+  %h4.element-header
+    Skills and save
+  .row
+    .col-sm-12.col-md-12.col-lg-12#skill-form
+      .form-group
+        -#.row
+        -#  .col-md-12
+        -#    %h5
+        -#      %b Have you ever worked with a Client?
+        -#      %label.radio-container
+        -#        Yes
+        -#        = f.radio_button :ever_worked_with_company, "Yes"
+        -#        %span.radio-checkmark
+        -#      %label.radio-container
+        -#        No
+        -#        = f.radio_button :ever_worked_with_company, "No"
+        -#        %span.radio-checkmark
+        .row.client_information_main_div
+          .col-md-12
+            .form-group.candidate-association
+              = f.fields_for :clients do |b|
+                = render 'candidate/candidates/client_fields', f: b
+              %strong
+                .links.pull-right
+                  = link_to_add_association '+ Add Client', f, :clients, class: 'btn btn-primary', partial: 'candidate/candidates/client_fields'
+  %br/
+  %h4.element-header
+    Employer Information
+  .row
+    .col-sm-12.col-md-12.col-lg-12#designate-form
+      = render 'candidate/candidates/partials/designate_form',f: f
+      %strong
+        .links.pull-right
+          = link_to_add_association '+ Add Employer', f, :designations, class: 'btn btn-primary', partial: 'candidate/candidates/designations_fields'

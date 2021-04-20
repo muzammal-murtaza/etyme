@@ -1,0 +1,69 @@
+<% if @conversation.present? %>
+  <% user = @conversation.chatable_type == "Group" ? @conversation.chatable : (@conversation.senderable == current_candidate ? @conversation.recipientable : @conversation.senderable) %>
+  <div class="chat-info-section p-0 pb-3">
+    <div class="ci-header pl-1 d-flex">
+      <span>Chat Member</span>
+      <% if ConversationMute.where(conversation: @conversation, mutable: current_candidate).present? %>
+        <%= link_to "<i class='ti-bell'></i>".html_safe, unmute_candidate_conversation_path(@conversation),title: 'Unmute Conversation','data-toggle'=>"tooltip" ,'data-placement'=>"top",class: "ml-auto" %>
+      <% else %>
+        <%= link_to "<i class='fa fa-bell-slash-o' style='color: red;'></i>".html_safe, mute_candidate_conversation_path(@conversation),class:'text-danger',title: 'Mute Conversation','data-toggle'=>"tooltip" ,'data-placement'=>"top",class: "ml-auto" %>
+      <% end %>
+    </div>
+    <div class="group-member">
+      <% if @conversation.chatable_type == "Group" %>
+        <ul>
+          <% @conversation.chatable.groupables.each do |g| %>
+            <li class="display-flex">
+             <%=user_image(g.groupable, style: 'width: 35px; height: 35px;', class: 'data-table-image mr-2 superbox-img',title: "#{g.groupable.full_name}" )%>
+              <span  class="align-self-center">
+                <%= do_ellipsis(g.groupable.full_name.capitalize, 13) %>
+              </span>
+              <% if g.groupable == current_candidate %>
+                <%= link_to "<i class='icon-feather-x'></i>".html_safe, leave_group_candidate_conversations_path(group: @conversation.chatable_id), class: "ml-auto align-self-center" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <ul>
+          <li>
+            <%= image_tag user.photo, class: 'superbox-img', style: 'border-radius: 50%;width:30px !important;height:30px !important' %>
+            <%= do_ellipsis(user.full_name.capitalize, 15) %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="chat-info-section p-0 pt-4">
+    <% if @conversation.topic == "JobApplication" %>
+      <div class="ci-header">
+        <i class="os-icon os-icon-documents-03"></i><span>Activity log</span>
+      </div>
+      <div class="timed-activities timed-activities_height compact pt-3">
+        <% if job_application_activity_hash.present? %>
+          <div class="col-sm-12">
+            <div class="element-wrapper">
+              <div class="timed-activities compact">
+                <% job_application_activity_hash.each do |key, value| %>
+                  <div class="timed-activity">
+                    <div class="ta-date">
+                      <span>
+                        <%= key %>
+                      </span>
+                    </div>
+                    <div class="ta-record-w">
+                      <% value.each do |activity| %>
+                        <%= render_activity activity %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

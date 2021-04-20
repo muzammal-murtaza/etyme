@@ -1,0 +1,32 @@
+<table id="jobs_datatable" class="table table-lightborder table-striped dataTable" data-class="Scaffolding::Thing">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Skills</th>
+    <th>Location</th>
+    <th>Visa</th>
+    <th>Recruiter</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @job_applications.each do |application| %>
+      <tr data-id="<%= application.id %>">
+        <td>
+          <%= link_to user_image(application.user, style: 'width: 35px; height: 35px;', class: 'data-table-image mr-2',title: "#{application.try(:user).try(:full_name)}" ), job_application_path(application)%>
+        </td>
+        <td>
+          <% application.user.skills.each do |skill| %>
+            <span class="badge-success badge"><%= skill.name %></span>
+          <% end %>
+        </td>
+        <td><%= application.user.try(:location) %></td>
+        <td><%= application.user.visa %></td>
+        <td>
+          <% application.user.companies.each do |company| %>
+            <span class="badge-info badge mb-5"><%= company.name %></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

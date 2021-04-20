@@ -1,0 +1,74 @@
+.content-box
+  .element-wrapper
+    .element-box
+      .element-header Documents Templates
+      =form_tag(controller: 'company/job_applications', action: 'send_templates') do
+        = hidden_field_tag 'id', @job_application.id
+        .table-responsive
+          %table#dataTable.table.text-center.table-bordered.table-lg.table-v2.table-striped
+            %thead
+              %tr{:role => "row"}
+                %th Select
+                %th.expand.sorting_asc Title
+                %th Type
+                %th Document For
+                %th Expiry Date
+                %th Is Require
+                %th Attachments
+              %tbody
+                - current_company.company_candidate_docs.jobs_docs.each do |doc|
+                  %tr.even{:role => "row"}
+                    %td
+                      = check_box_tag "ids[]", doc.id
+                    %td= do_ellipsis(doc.title.capitalize,15)
+                    %td= doc.title_type
+                    %td= doc.document_for
+                    %td= doc.exp_date
+                    %td= doc.is_require
+                    %td
+                      -if !doc.file.blank?
+                        -index = 1
+                        - doc.file.split(",").each do |file_path|
+                          %br
+                          %a{:download => "", :href => file_path, :target=>"_blank"}
+                            = "#{index}: #{file_path.split('/').last}"
+                            - index = index +1
+        %br
+        #toggle_signers{class: current_company.candidate_job_templates.present? ? '': 'd-none'}
+          = select_tag 'signers[]', nil, id: "select_sell_company_contacts", class: "form-control select2 select2-hidden-accessible mb-2"
+        = button_tag 'submit', class: 'btn btn-sm btn-secondary pull-right mt-2'
+        %br
+    .element-wrapper
+      .element-box
+        .element-header Documents sent to candidate
+        .table-responsive
+          %table.table.text-center.table-bordered.table-lg.table-v2.table-striped
+            %thead
+              %tr{:role => "row"}
+                %th Document Title
+                %th Sent Date
+                %th Status
+                %th Signers
+                %th Envelope No
+                %th Signed Document
+            %tbody
+              - @document_signs.each do |docusign|
+                %tr
+                  %td= do_ellipsis(docusign.documentable.title.capitalize,15)
+                  %td{style: "color: #1AAE9F"}= do_ellipsis(docusign.created_at.strftime("%B %e, %Y at %I:%M %p"),15)
+                  %td{style: "color: #EFA544"}= docusign.is_sign_done ? "Completed" : "Pending"
+                  %td.d-flex
+                    =show_users(docusign)
+                  %td= do_ellipsis(docusign.envelope_id.present? ? docusign.envelope_id : "Document Not Submitted",15) if docusign.is_signable?
+                  %td
+                    - if docusign.documentable.is_require == "Website"
+                      = link_to content_tag(:i,'',class:'fa fa-users').html_safe, docusign.signed_file if docusign.is_sign_done
+                    -else
+                      = link_to content_tag(:i,'',class:'fa fa-paperclip fa-lg').html_safe, docusign.signed_file if docusign.is_sign_done
+
+
+- content_for :scripts do
+  :javascript
+    $(document).ready(function() {
+      set_company_users_select('#select_sell_company_contacts', "Please Select Signers", "#sell_contract_company");
+    })

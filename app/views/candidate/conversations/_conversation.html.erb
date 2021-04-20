@@ -1,0 +1,145 @@
+<!--<div class="chat_box" data-conversation-id="<%#= @conversation.id if @conversation.present?%>" id="conversation-chat-box">-->
+<!--<div class="key_mgs_box">-->
+<!--<div class="keys_head">-->
+<!--<h5><%#= @conversation.senderable == current_candidate ? @conversation.recipientable.full_name : @conversation.senderable.full_name if @conversation.present? %></h5>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="tab-content">-->
+<!--<div class="tab-pane active" id="home" role="tabpanel">-->
+<!--<div class="keystroke_msgs_box" id="conversation_<%#= @conversation.id if @conversation.present? %>">-->
+<!--<%# @messages.each do |msg| %>-->
+<!--<div class="<%#= msg.userable == current_candidate ? 'send_message' : 'receive_message' %>">-->
+<!--<span><%#= msg.body %></span>-->
+<!--</div>-->
+<!--<%# end if @messages.present? %>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="panel-footer">-->
+<!--<%#= form_tag candidate_conversation_conversation_messages_path(@conversation||=0), remote: true ,method: :post do %>-->
+<!--<div class="input-group">-->
+<%#= text_field_tag 'conversation_message[body]', nil, class: 'form-control input-sm chat_input ',autocomplete: "off",
+                           placeholder: 'Type your message here...', required: true, id: "conversation_#{@conversation.id}_#{current_candidate.class.to_s}_#{current_candidate.id}" %>
+<!--<span class="input-group-btn">-->
+<!--<%#= submit_tag "Send", class: 'btn btn-primary btn-sm', id: "btn-chat" %>-->
+<!--</span>-->
+<!--</div>-->
+<!--<%# end if @conversation.present?  %>-->
+<!--</div>-->
+<!--</div>-->
+
+
+
+<div class="chat_box with_border wrap-chat-box" data-conversation-id="<%= @conversation.id if @conversation.present? %>" id="conversation-chat-box">
+  <div class="chat-head" style="flex-direction: column; align-items: stretch;">
+    <div class="flex-row w-100" style="justify-content: space-between;">
+      <% opt_obj = @conversation.chatable_type == "Group" ? @conversation.chatable : (@conversation.senderable == current_candidate ? @conversation.recipientable : @conversation.senderable) if @conversation.present? %>
+      <div>
+        <span>To:</span>
+        <a class="d-inline" href="#"><%= opt_obj.full_name if opt_obj.present? %></a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="chat-content-w chat-content-scroll">
+    <div class="chat-content" id="conversation_<%= @conversation.id if @conversation.present? %>">
+      <!--<%# prev_date = nil %>-->
+      <!--<%# @messages.each do |msg| %>-->
+      <!--<%# if prev_date != msg.created_at.strftime('%d %b, %Y') %>-->
+      <!--<%# prev_date = msg.created_at.strftime('%d %b, %Y') %>-->
+      <!--<div class="chat-date-separator">-->
+      <!--<span>-->
+      <!--<%# if Date.parse(prev_date) == Date.today %>-->
+      <!--Today-->
+      <!--<%# elsif Date.parse(prev_date) == Date.yesterday %>-->
+      <!--Yesterday-->
+      <!--<%# else %>-->
+      <!--<%#= prev_date %>-->
+      <!--<%# end %>-->
+      <!--</span>-->
+      <!--</div>-->
+      <!--<%# end %>-->
+
+      <!--<%# if msg.userable == current_candidate %>-->
+      <!--<div class="chat-message self">-->
+      <!--<div class="chat-message-content-w">-->
+      <!--<div class="chat-message-content">-->
+      <!--<%#= msg.body %>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="chat-message-date">-->
+      <!--<%#= msg.created_at.strftime("%l:%M%P") %>-->
+      <!--</div>-->
+      <!--<div class="chat-message-avatar">-->
+      <!--<%#= image_tag msg.userable.photo %>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<%# else %>-->
+      <!--<div class="chat-message">-->
+      <!--<div class="chat-message-content-w">-->
+      <!--<div class="chat-message-content">-->
+      <!--<%#= msg.body %>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="chat-message-avatar">-->
+      <!--<%#= image_tag msg.userable.photo %>-->
+      <!--</div>-->
+      <!--<div class="chat-message-date">-->
+      <!--<%#= msg.created_at.strftime("%l:%M%P") %>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<%# end %>-->
+      <!--<%# end if @messages.present? %>-->
+
+      <div id="all-infinite-scrolling-msg" style="display:none"></div>
+      <%= hidden_field_tag "prev_date", nil %>
+
+    </div>
+  </div>
+  <div class="chat-controls">
+    <%= form_for([@conversation, ConversationMessage.new], :remote => true, :html => {id: "conversation_form_#{@conversation.id}"}) do |f| %>
+      <div class="chat-input1 chat-input">
+        <%= f.text_field :body, class: 'form-control input-sm chat_input ', autocomplete: "off", required: true, placeholder: 'Type your message here...', "data-cid" => @conversation.id, id: "con-text-#{@conversation.id}-#{current_candidate.class}-#{current_candidate.id}" %>
+      </div>
+      <div id="file-name_uploaded">
+
+      </div>
+      <div class="chat-input-extra">
+        <div class="chat-extra-actions">
+          <%= render 'shared/file_attachement', f: f, attr_name: :file_url, name_selector: ".uploaded_file_name", cstm_class: "p-0", cstm_style: "background: transparent;box-shadow: none;", button_name: "<i class='os-icon os-icon-ui-51' style='font-size: 26px;'></i>".html_safe, name_selector: '#file-name_uploaded', required_field: false %>
+          <% if @conversation.present? %>
+            <div class="candidate-icon_widget">
+              <%= mini_chat_contact_widget(current_candidate.email, current_candidate.phone,color: '#3E4B5B; !important') %>
+            </div>
+          <% end %>
+
+        </div>
+        <div class="chat-btn">
+          <%= button_tag(type: "submit", class: "btn p-0",id:"send-message", style: "background: transparent;box-shadow: none;") do %>
+            <i class="os-icon os-icon-mail-18" style='font-size: 26px; margin: 0px;'></i>
+          <% end %>
+        </div>
+      </div>
+
+
+    <% end if @conversation.present? %>
+  </div>
+</div>
+
+<%= content_for :modals do %>
+  <% if @conversation&.job_application %>
+    <div id="candidate_rate_confirmation_modal">
+      <%= render 'shared/candidate_rate_confirmation', job_application: @conversation.job_application, conversation: @conversation %>
+    </div>
+    <div id="candidate_interview_modal">
+      <%= render 'shared/candidate_interview_modal', job_application: @conversation.job_application, conversation: @conversation %>
+    </div>
+  <% end %>
+<% end %>
+
+<script>
+  function onFileUpload (event) {
+    $('#file-name_uploaded').html("<span>" + event.fpfile.filename + "</span><hr/>");
+  }
+</script>

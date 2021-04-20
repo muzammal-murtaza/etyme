@@ -1,0 +1,75 @@
+!!!
+%html{:id => "#{yield :html_id}"}
+  %head
+    #load
+    %meta{:charset => "utf-8"}/
+    %title Etyme
+    = csrf_meta_tags
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %meta{:content => "#{user_signed_in? ? current_user.id : ''}", :name => "user-id"}
+    %meta{:content => "#{user_signed_in? ? current_user.class.to_s == "Candidate" ? "Candidate" : "User" : ''}", :name => "user-type"}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    = stylesheet_link_tag 'company', media: 'screen'
+    / FAVICONS
+    = action_cable_meta_tag
+    = favicon_link_tag 'favicon/favicon.ico'
+    = favicon_link_tag 'favicon/favicon.ico', rel: 'icon'
+    = javascript_include_tag "https://www.skypeassets.com/i/scom/js/skype-uri.js"
+    %script{async: "async", src: 'https://platform-api.sharethis.com/js/sharethis.js#property=5f48045b584ea10012677add&product=inline-share-buttons', type: "text/javascript"}
+
+    / GOOGLE FONT
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Rubik:300,400,500'
+    / PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
+    -#= javascript_include_tag 'plugin/pace/pace.min', 'data-pace-options' => '{ "restartOnRequestAfter": true }'
+    /
+    -#= favicon_link_tag 'splash/sptouch-icon-iphone.png', type: 'image/png', rel: 'apple-touch-icon'
+    -#= favicon_link_tag 'splash/touch-icon-ipad.png', type: 'image/png', sizes: '76x76', rel: 'apple-touch-icon'
+    -#= favicon_link_tag 'splash/touch-icon-iphone-retina.png', type: 'image/png', sizes: '120x120', rel: 'apple-touch-icon'
+    -#= favicon_link_tag 'splash/touch-icon-ipad-retina.png', type: 'image/png', sizes: '152x152', rel: 'apple-touch-icon'
+    / iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}/
+    / Startup image for web apps
+    -#= favicon_link_tag 'splash/ipad-landscape.png', type: 'image/png', rel: 'apple-touch-startup-image', media: 'screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)'
+    -#= favicon_link_tag 'splash/ipad-portrait.png', type: 'image/png', rel: 'apple-touch-startup-image', media: 'screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)'
+    -#= favicon_link_tag 'splash/iphone.png', type: 'image/png', rel: 'apple-touch-startup-image', media: 'screen and (max-device-width: 320px)'
+    = yield :head
+    = yield :google_address_search_api if block_given?
+
+  %body.smart-style-6{class: "#{yield :body_class} menu-position-side menu-side-left full-screen"}
+    .all-wrapper
+      %ul.dropdown-menu.lpm#links_block
+        =render('company/shared/links_block')
+
+      .layout-w.flex-d-column
+        = render partial: 'company/shared/left_panel'
+        .content-w.fixed-height
+          = render partial: 'company/shared/header'
+          #main{:role => "main" ,style: "min-height: 750px !important"}
+            #ribbon
+              %ol.breadcrumb
+                = render_breadcrumbs tag: :li, separator: " / "
+            -#= yield :ribbon
+            = yield
+          -#.remote_container
+          #modals
+            =yield :modals
+          .remote_container
+          = render partial: 'company/shared/footer'
+          = render partial: 'company/shared/tiles'
+          = render partial: 'shared/add_to_chat_modal'
+    = javascript_include_tag 'company'
+
+  /[if IE 8]
+  = yield(:scripts).present? ? yield(:scripts) : render(partial: 'shared/scripts')
+  = render 'shared/flash_messages'
+:css
+  #load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:9999;
+    background:url('https://cdn.filepicker.io/api/file/TwNQBxhZRuLGU1iD2uaA') no-repeat center center rgba(0,0,0,0.25)
+  }

@@ -1,0 +1,32 @@
+.content-i
+  .content-box
+    .row
+      .col-sm-12
+        .element-wrapper
+          .element-box-tp
+            .controls-above-table
+              .row.mr-1.ml-1
+                .col-sm-6
+                  %a.btn.btn-sm.btn-secondary{ :href => "#{new_company_company_path}", :title => "New Company" } Add Company
+                .col-sm-6
+                  .form-inline.justify-content-sm-end
+                    %input.form-control.form-control-sm.rounded.bright{placeholder: "Search", type: 'search', id: 'companies-datatable-search'}
+            .table-responsive
+              %table#companies-datatable.table.text-center.table-bordered.table-lg.table-v2.table-striped{"data-source" => "#{companies_path(format: :json)}",  width: "100%"}
+                %thead
+                  %tr
+                    %th
+                      %input{ type:"checkbox", name:"select_all", id:"example-select-all"}
+                    %th Name
+                    %th Number of users
+                    %th Reminder/Note
+                    %th Status
+                    %th contact
+                    %th Actions
+                %tbody
+
+-content_for :scripts do
+  :javascript
+    $(document).ready(function(){
+      default_active_nav('.ln-3');
+    });
