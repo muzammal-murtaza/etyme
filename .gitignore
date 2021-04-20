@@ -14,12 +14,9 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
 /tmp
 .idea
 .idea/*
-/log/
 /public/uploads/
 /public/assets/
 config/application.yml
