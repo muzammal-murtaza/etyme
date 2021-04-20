@@ -759,12 +759,13 @@ Rails.application.routes.draw do
       invitations: 'candidate/invitations'
   }
   # Route set when subdomain present?
-  constraints(Subdomain) do
-      match '/' => 'static/jobs#static_feeds',:as=> :root_static_feeds, via: %i[get]
-    # devise_scope :user do
-    #   # match '/' => 'devise/sessions#new', via: %i[get post]
-    # end
-  end
+  # constraints(Subdomain) do
+  #     match '/' => 'static/jobs#static_feeds',:as=> :root_static_feeds, via: %i[get]
+  #   # devise_scope :user do
+  #   #   # match '/' => 'devise/sessions#new', via: %i[get post]
+  #   # end
+  # end
+  get 'static/jobs/static_feeds', to: 'static/jobs#static_feeds', :as=> :root_static_feeds
 
   # Route set when subdomain is not present
   constraints(NakedEtymeDomain) do
