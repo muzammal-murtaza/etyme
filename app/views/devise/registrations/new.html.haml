@@ -3,7 +3,7 @@
     .auth-box-w
       .logo-w
         %a{:href => "/"}
-          %img{:alt => "", :height => "54", :src => "#{image_path('etyme-logo-dark')}", :width => "image_width_for_height('logo/logo-big.png', 54)"}/
+          %img{:alt => "", :height => "54", :src => "#{image_path('logob')}", :width => "image_width_for_height('logo/logo-big.png', 54)"}/
       %h4.auth-header Sign Up
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
