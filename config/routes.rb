@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :messages, concerns: :commentable
   resources :articles, concerns: %i[commentable image_attachable]
 
+  get '/register' => redirect('/candidates/sign_up')
   get '/company/conversation/chat_members', to: 'company/conversations#chat_members'
   get '/company/conversation/chat_candidates', to: 'company/conversations#chat_candidates'
   get 'sites_jobs_preview', to: 'company/jobs#sites_jobs_preview', as: :sites_jobs_preview
@@ -21,7 +22,6 @@ Rails.application.routes.draw do
   get '/states/:country', to: 'application#states'
   get '/cities/:state/:country', to: 'application#cities'
   get 'site_jobs' => 'company/companies#site_jobs', as: :site_job
-  get 'register' => 'companies#new'
   get 'signin', to: 'static#signin'
   post 'signin', to: 'static#signin'
   # get 'signup', to: 'static#signup'
@@ -841,5 +841,6 @@ Rails.application.routes.draw do
   get 'company/contracts/:id/add_reminder', to: 'company/contracts#add_reminder', as: :contract_add_reminder
 
   post 'api/company/', to: 'api/company/companies#create_custom_company'
+  match "*path" => redirect("/"), :via => [:get, :post]
 
 end
