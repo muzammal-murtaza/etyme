@@ -31,30 +31,6 @@
         <div class="intro-text">Blocktyme handles all workflow marketing, sales, hiring, managing and paying temp/contract staff. Your work will flow more quickly and smoothly.</div>
         <br><br>
 
-        <div class="mobile_content row intro-text" style="padding: 4%;">
-          <h5 class="" style="font-size: 10pt">Get started for free (no coding, no credit card).</h5>
-          <br><br>
-          <div class="col-md-6" style="padding-left: 5%">
-            <img style="padding-left: 5%" width="14%" src="<%= image_path("static/img/business-icon.png") %>" alt=""><b style="color: black; padding-left: 5%"><a href="<%= register_path %>">Business Teams</a></b>
-            <br><br>
-            <div class="mobile_content" style="font-size: 16px;" class="intro-text">For Hiring Managers, Recruiters, Account  Managers, Timesheet Admins, Accountants, Trainers in Staffing.</div>
-          </div>
-          <div class="col-md-6" style="border-left: #a7a8a9 1px solid; padding-left: 5%">
-            <img width="14%" style="padding-left: 5%" src="<%= image_path("static/img/candidate-icon.png") %>" alt=""><b style="color: black; padding-left: 5%"><a href="<%= new_candidate_registration_path %>">Candidates</a></b>
-            <br><br>
-            <div class="mobile_content" style="font-size: 16px;" class="intro-text">Find work, manage, get paid, Build resume along, get reviews and feedback</div>
-            <br>
-          </div>
-        </div>
-
-        <div class="row intro-text desktop_content">
-          <img width="20px" height="19px" src="<%= image_path("static/img/business-icon.png") %>">
-          <b style="color: black; padding-left: 1%"><a href="<%= register_path %>">Business Teams</a></b>&nbsp;
-          |&nbsp;&nbsp;
-          <img width="20px" height="19px" src="<%= image_path("static/img/candidate-icon.png") %>">
-          <b style="color: black; padding-left: 1%"><a href="<%= new_candidate_registration_path %>">Candidates</a></b>
-        </div>
-
       </div>
       <div class="intro-media">
         <div class="shot shot1">
@@ -79,7 +55,7 @@
   <div class="cta-desc">BlockTyme was designed for contract/temp agencies that need to be able to handle the paperwork for dozens to hundreds of employees. It delivers a completely automated HR workflow that includes background checks, reference checks, work authorization, I-9, W-4, e-Verify, and more. Manage schedules, invoice clients, pay contractors, and much more <i>all through a single platform!</i></div>
 
   <p class="call-to-action-btn-wrapper">
-    <a class="btn btn-primary" href="/register">Yes! I need one powerful platform!</a>
+    <a class="btn btn-primary" href="<%= new_candidate_registration_path %>">Yes! I need one powerful platform!</a>
   </p>
 </div>
 
@@ -167,7 +143,7 @@
 </div>
 
 <p class="features-btn-wrapper">
-  <a class="btn btn-primary" href="/register">Let's Get Your Business Growing!</a>
+  <a class="btn btn-primary" href="<%= new_candidate_registration_path %>">Let's Get Your Business Growing!</a>
 </p>
 
 <div class="display-type">

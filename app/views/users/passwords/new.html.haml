@@ -4,7 +4,7 @@
     %label{:for => "user_email"} Email
     = f.email_field :email, autofocus: true,id: 'user_email', class:'form-control field', placeholder: "Enter Email", required: true
     .help-block.form-text.with-errors.form-control-feedback
-      %a{:href => "/register"} Don't have an account?
+      %a{:href => "new_candidate_registration_path"} Don't have an account?
     .pre-icon.os-icon.os-icon-email-2-at2
   = f.submit 'Reset Password',class:'float form-btn btn btn-primary'
 

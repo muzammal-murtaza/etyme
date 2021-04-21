@@ -18,7 +18,7 @@
                 - if current_user.present?
                   = contact_widget(current_user.email,current_user.phone,nil,color: '#3E4B5B; !important',chat_link: chat_link(current_user))
                 - else
-                  = contact_widget(current_user.email,current_user.phone,nil,color: '##3E4B5B; !important',chat_link: register_path,remote_false: true)
+                  = contact_widget(current_user.email,current_user.phone,nil,color: '##3E4B5B; !important',chat_link: new_candidate_registration_path,remote_false: true)
               .col-sm-6
                 = link_to candidate_conversations_path, class: "btn btn-primary btn-sm" do
                   %i.ti-email

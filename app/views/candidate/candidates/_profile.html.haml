@@ -28,7 +28,7 @@
                 - if current_user.present?
                   = contact_widget(candidate.email,candidate.phone,nil,color: '#3E4B5B; !important',chat_link: chat_link(candidate))
                 - else
-                  = contact_widget(candidate.email,candidate.phone,nil,color: '#3E4B5B; !important',chat_link: register_path,remote_false: true)
+                  = contact_widget(candidate.email,candidate.phone,nil,color: '#3E4B5B; !important',chat_link: new_candidate_registration_path,remote_false: true)
               .col-sm-6.text-right
                 - if own
                   %a.btn.btn-primary.btn-sm{:href => "/onboarding_profile?tag=verify-phone"}
